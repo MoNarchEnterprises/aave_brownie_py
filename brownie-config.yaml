@@ -1,0 +1,60 @@
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@0.3.1
+  - OpenZeppelin/openzeppelin-contracts@3.4.0
+
+compiler:
+  solc:
+    remappings:
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@0.3.1"
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0"
+
+dotenv: .env
+
+networks:
+  default: mainnet-forked-dev
+  rinkeby:
+    eth_usd_price_feed: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e"
+    dai_eth_price_feed: "0x74825DbC8BF76CC4e9494d0ecB210f676Efa001D"
+    vrf_coordinator: "0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B"
+    link_token: "0x01BE23585060835E02B77ef475b0Cc51aA1e0709"
+    keyhash: "0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311"
+    vrf_fee: 100000000000000000
+    Verify: True
+  mainnet-forked-dev:
+    eth_usd_price_feed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+    dai_eth_price_feed: "0x773616E4d11A78F511299002da57A0a94577F1f4"
+    vrf_coordinator: "0xf0d54349aDdcf704F77AE15b96510dEA15cb7952"
+    link_token: "0x514910771AF9Ca656af840dff83E8264EcF986CA"
+    keyhash: "0xAA77729D3466CA35AE8D28B3BBAC7CC36A5031EFDC430821C02BC31A238AF445"
+    Verify: False
+    weth_token: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+    dai_token: "0x6b175474e89094c44da98b954eedeac495271d0f"
+    lending_pool_addresses_provider: "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
+  kovan:
+    eth_usd_price_feed: "0x9326BFA02ADD2366b30bacB125260Af641031331"
+    dai_eth_price_feed: "0x22B58f1EbEDfCA50feF632bD73368b2FdA96D541"
+    vrf_coordinator: "0xdD3782915140c8f3b190B5D67eAc6dc5760C46E9"
+    link_token: "0xa36085F69e2889c224210F603D836748e7dC0088"
+    keyhash: "0x6c3699283bda56ad74f6b855546325b68d482e983852a7a82979cc4807b641f4"
+    vrf_fee: 100000000000000000
+    weth_token: "0xd0a1e359811322d97991e03f863a0c30c2cf029c"
+    lending_pool_addresses_provider: "0x88757f2f99175387aB4C6a4b3067c77A695b0349"
+  mainnet:
+    eth_usd_price_feed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+    dai_eth_price_feed: "0x773616E4d11A78F511299002da57A0a94577F1f4"
+    vrf_coordinator: "0xf0d54349aDdcf704F77AE15b96510dEA15cb7952"
+    link_token: "0x514910771AF9Ca656af840dff83E8264EcF986CA"
+    keyhash: "0xAA77729D3466CA35AE8D28B3BBAC7CC36A5031EFDC430821C02BC31A238AF445"
+    weth_token: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+    dai_token: "0x6b175474e89094c44da98b954eedeac495271d0f"
+    lending_pool_addresses_provider: "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
+  development:
+    keyhash: "0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311"
+    vrf_fee: 100000000000000000
+    Verify: False
+  ganache-local:
+    Verify: False
+
+wallets:
+  from_key: ${PRIVATE_KEY}
+  from_ganache_key: ${GANACHE_PRIVATE_KEY}
